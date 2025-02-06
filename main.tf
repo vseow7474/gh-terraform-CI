@@ -3,6 +3,15 @@ provider "aws" {
 }
 
 terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+terraform {
   backend "s3" {
     bucket = "sctp-ce8-tfstate"
     key    = "vic-s3-tf-ci.tfstate" #Change this
